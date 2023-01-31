@@ -35,5 +35,9 @@ namespace RpgSaga.Saga
             else
                 return 0;
         }
+        public override string ToString()
+        {
+            return "(Mage) " + base.ToString();
+        }
     }
 }

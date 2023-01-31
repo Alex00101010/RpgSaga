@@ -23,5 +23,9 @@ namespace RpgSaga.Saga
             }
             return strength + (int)(aactive ? 1 : 0 * strength * 0.3f);
         }
+        public override string ToString()
+        {
+            return "(Warrior) " + base.ToString();
+        }
     }
 }

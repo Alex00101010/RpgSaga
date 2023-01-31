@@ -20,6 +20,7 @@ namespace RpgSaga.Saga
             a.Reset();
             this.b = b;
             b.Reset();
+            log = $">>--[{a.ToString()} vs {b.ToString()}]--<<\n";
         }
 
         public Character GetWinner()
@@ -33,14 +34,16 @@ namespace RpgSaga.Saga
                 return;
 
             int resA = a.MakeTurn();
-            b.Damage(resA);
+            int pbdmg = b.Damage(resA);
+            log += $"{a.ToString()} dealt {pbdmg} damage to {b.ToString()}\n";
             if (!b.isAlive)
             {
                 finished = true;
                 return;
             }
             int resB = b.MakeTurn();
-            a.Damage(resB);
+            int padmg = a.Damage(resB);
+            log += $"{b.ToString()} dealt {pbdmg} damage to {a.ToString()}\n";
             if (!a.isAlive)
             {
                 finished = true;
@@ -50,6 +53,8 @@ namespace RpgSaga.Saga
 
         public void FightTillEnd()
         {
+            a.Reset();
+            b.Reset();
             while (a.isAlive && b.isAlive)
             {
                 Next();

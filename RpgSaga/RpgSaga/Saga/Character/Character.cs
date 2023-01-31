@@ -50,12 +50,17 @@ namespace RpgSaga.Saga
         {
             aactive = false;
             aused = false;
+            hp = maxhp;
         }
         public virtual int Damage(int damage)
         {
-            int res = damage > hp ? damage : hp;
+            int res = damage < hp ? damage : hp;
             hp -= res;
             return res;
+        }
+        public override string ToString()
+        {
+            return name;
         }
     }
 }
