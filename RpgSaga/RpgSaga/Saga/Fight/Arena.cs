@@ -9,7 +9,7 @@ namespace RpgSaga.Saga
     class Arena
     {
         List<Character> characters;
-        string[] names = { "Atos", "Portos", "Aramis", "Dart Vader", "Dartanian", "Gendalf", "Goliaf", "David" };
+        string[] names = { "Atos", "Portos", "Aramis", "Dart Vader", "Dartanian", "Gendalf", "Goliaf", "David", "Eldar", "Artur", "Williams" };
 
         public Arena(int count, int seed) //random
         {
