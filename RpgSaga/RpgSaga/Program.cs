@@ -10,6 +10,8 @@ namespace RpgSaga
             var log = arena.Start();
             Console.WriteLine(log);
             Console.WriteLine("Winner: " + arena.GetWinner());
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadKey();
         }
     }
 }
